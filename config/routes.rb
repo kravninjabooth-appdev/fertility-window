@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Ovulation calculator resource:
+
+  # CREATE
+  post("/insert_ovulation_calculator", { :controller => "ovulation_calculators", :action => "create" })
+          
+  # READ
+  get("/ovulation_calculators", { :controller => "ovulation_calculators", :action => "index" })
+  
+  get("/ovulation_calculators/:path_id", { :controller => "ovulation_calculators", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_ovulation_calculator/:path_id", { :controller => "ovulation_calculators", :action => "update" })
+  
+  # DELETE
+  get("/delete_ovulation_calculator/:path_id", { :controller => "ovulation_calculators", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM

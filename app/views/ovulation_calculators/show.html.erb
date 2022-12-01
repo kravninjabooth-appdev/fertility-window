@@ -1,0 +1,176 @@
+<div>
+  <div>
+    <h1>
+      Ovulation calculator #<%= @the_ovulation_calculator.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/ovulation_calculators">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_ovulation_calculator/<%= @the_ovulation_calculator.id %>">
+          Delete ovulation calculator
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.user_id %>
+      </dd>
+
+      <dt>
+        First day of last period
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.first_day_of_last_period %>
+      </dd>
+
+      <dt>
+        Fertile window date1
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.fertile_window_date1 %>
+      </dd>
+
+      <dt>
+        Approx ovulation
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.approx_ovulation %>
+      </dd>
+
+      <dt>
+        Next period
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.next_period %>
+      </dd>
+
+      <dt>
+        Pregnancy test day
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.pregnancy_test_day %>
+      </dd>
+
+      <dt>
+        Fertile window date2
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.fertile_window_date2 %>
+      </dd>
+
+      <dt>
+        Average cycle
+      </dt>
+      <dd>
+        <%= @the_ovulation_calculator.average_cycle %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ovulation_calculator.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ovulation_calculator.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit ovulation calculator
+    </h2>
+
+    <form action="/modify_ovulation_calculator/<%= @the_ovulation_calculator.id %>"  method="post" >
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_ovulation_calculator.user_id %>">
+      </div>
+
+      <div>
+        <label for="first_day_of_last_period_box">
+          First day of last period
+        </label>
+
+        <input type="date" id="first_day_of_last_period_box" name="query_first_day_of_last_period" value="<%= @the_ovulation_calculator.first_day_of_last_period %>">
+      </div>
+
+      <div>
+        <label for="fertile_window_date1_box">
+          Fertile window date1
+        </label>
+
+        <input type="date" id="fertile_window_date1_box" name="query_fertile_window_date1" value="<%= @the_ovulation_calculator.fertile_window_date1 %>">
+      </div>
+
+      <div>
+        <label for="approx_ovulation_box">
+          Approx ovulation
+        </label>
+
+        <input type="date" id="approx_ovulation_box" name="query_approx_ovulation" value="<%= @the_ovulation_calculator.approx_ovulation %>">
+      </div>
+
+      <div>
+        <label for="next_period_box">
+          Next period
+        </label>
+
+        <input type="date" id="next_period_box" name="query_next_period" value="<%= @the_ovulation_calculator.next_period %>">
+      </div>
+
+      <div>
+        <label for="pregnancy_test_day_box">
+          Pregnancy test day
+        </label>
+
+        <input type="date" id="pregnancy_test_day_box" name="query_pregnancy_test_day" value="<%= @the_ovulation_calculator.pregnancy_test_day %>">
+      </div>
+
+      <div>
+        <label for="fertile_window_date2_box">
+          Fertile window date2
+        </label>
+
+        <input type="date" id="fertile_window_date2_box" name="query_fertile_window_date2" value="<%= @the_ovulation_calculator.fertile_window_date2 %>">
+      </div>
+
+      <div>
+        <label for="average_cycle_box">
+          Average cycle
+        </label>
+
+        <input type="text" id="average_cycle_box" name="query_average_cycle" value="<%= @the_ovulation_calculator.average_cycle %>">
+      </div>
+
+      <button>
+        Update ovulation calculator
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

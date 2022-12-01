@@ -1,0 +1,198 @@
+<div>
+  <div>
+    <h1>
+      List of all ovulation calculators
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new ovulation calculator
+    </h2>
+
+    <form action="/insert_ovulation_calculator" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="first_day_of_last_period_box">
+          First day of last period
+        </label>
+
+        <input type="date" id="first_day_of_last_period_box" name="query_first_day_of_last_period">
+      </div>
+
+      <div>
+        <label for="fertile_window_date1_box">
+          Fertile window date1
+        </label>
+
+        <input type="date" id="fertile_window_date1_box" name="query_fertile_window_date1">
+      </div>
+
+      <div>
+        <label for="approx_ovulation_box">
+          Approx ovulation
+        </label>
+
+        <input type="date" id="approx_ovulation_box" name="query_approx_ovulation">
+      </div>
+
+      <div>
+        <label for="next_period_box">
+          Next period
+        </label>
+
+        <input type="date" id="next_period_box" name="query_next_period">
+      </div>
+
+      <div>
+        <label for="pregnancy_test_day_box">
+          Pregnancy test day
+        </label>
+
+        <input type="date" id="pregnancy_test_day_box" name="query_pregnancy_test_day">
+      </div>
+
+      <div>
+        <label for="fertile_window_date2_box">
+          Fertile window date2
+        </label>
+
+        <input type="date" id="fertile_window_date2_box" name="query_fertile_window_date2">
+      </div>
+
+      <div>
+        <label for="average_cycle_box">
+          Average cycle
+        </label>
+
+        <input type="text" id="average_cycle_box" name="query_average_cycle">
+      </div>
+
+      <button>
+        Create ovulation calculator
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          First day of last period
+        </th>
+
+        <th>
+          Fertile window date1
+        </th>
+
+        <th>
+          Approx ovulation
+        </th>
+
+        <th>
+          Next period
+        </th>
+
+        <th>
+          Pregnancy test day
+        </th>
+
+        <th>
+          Fertile window date2
+        </th>
+
+        <th>
+          Average cycle
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_ovulation_calculators.each do |an_ovulation_calculator| %>
+      <tr>
+        <td>
+          <%= an_ovulation_calculator.id %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.user_id %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.first_day_of_last_period %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.fertile_window_date1 %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.approx_ovulation %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.next_period %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.pregnancy_test_day %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.fertile_window_date2 %>
+        </td>
+
+        <td>
+          <%= an_ovulation_calculator.average_cycle %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(an_ovulation_calculator.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(an_ovulation_calculator.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/ovulation_calculators/<%= an_ovulation_calculator.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

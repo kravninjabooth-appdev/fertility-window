@@ -1,0 +1,2 @@
+class OvulationCalculator < ApplicationRecord
+end
