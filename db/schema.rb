@@ -10,6 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_12_01_164652) do
+
+  create_table "ovulation_calculators", force: :cascade do |t|
+    t.integer "user_id"
+    t.date "first_day_of_last_period"
+    t.date "fertile_window_date1"
+    t.date "approx_ovulation"
+    t.date "next_period"
+    t.date "pregnancy_test_day"
+    t.date "fertile_window_date2"
+    t.integer "average_cycle"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "first_name"
+    t.string "last_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
