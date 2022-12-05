@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post("/insert_ovulation_calculator", { :controller => "ovulation_calculators", :action => "create" })
           
   # READ
-  get("/ovulation_calculators", { :controller => "ovulation_calculators", :action => "index" })
+  get("/dashboard", { :controller => "ovulation_calculators", :action => "index" })
   
   get("/ovulation_calculators/:path_id", { :controller => "ovulation_calculators", :action => "show" })
   
