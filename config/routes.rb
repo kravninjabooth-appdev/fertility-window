@@ -49,5 +49,5 @@ Rails.application.routes.draw do
   #------------------------------
 
   # HOMEPAGE
-  get("/", { :controller => "application", :action => "homepage" })
+  #get("/", { :controller => "application", :action => "homepage" })
 end
