@@ -23,6 +23,12 @@ class OvulationCalculatorsController < ApplicationController
     @the_ovulation_calculator.first_day_of_last_period = params.fetch("query_first_day_of_last_period")
     @the_ovulation_calculator.average_cycle = params.fetch("query_average_cycle")
   
+    require "date"
+    @num1 = Date.parse(params.fetch("query_first_day_of_last_period"))
+    @num2 = params.fetch("query_average_cycle")
+    @the_ovulation_calculator.approx_ovulation = @num1 + (@num2.to_i - 14)
+
+
     if @the_ovulation_calculator.valid?
       @the_ovulation_calculator.save
       redirect_to("/ovulation_calculators", { :notice => "Ovulation calculator created successfully." })
@@ -32,10 +38,7 @@ class OvulationCalculatorsController < ApplicationController
   end
 
   def results
-    require "date"
-    @num1 = params.fetch("query_first_day_of_last_period")
-    @num2 = params.fetch("query_average_cycle")
-    @the_ovulation_calculator.approx_ovulation = @num1.to_i + @num2.to_i - 14
+    
     #the_ovulation_calculator.next_period = params.fetch("query_next_period")
     #the_ovulation_calculator.fertile_window_date1 = params.fetch("query_fertile_window_date1")
     #the_ovulation_calculator.fertile_window_date2 = params.fetch("query_fertile_window_date2")
