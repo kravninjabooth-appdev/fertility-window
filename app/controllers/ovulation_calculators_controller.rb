@@ -19,7 +19,7 @@ class OvulationCalculatorsController < ApplicationController
 
   def create
     @the_ovulation_calculator = OvulationCalculator.new
-    #the_ovulation_calculator.user_id = params.fetch("query_user_id")
+    @the_ovulation_calculator.user_id = session.fetch(:user_id)
     @the_ovulation_calculator.first_day_of_last_period = params.fetch("query_first_day_of_last_period")
     @the_ovulation_calculator.average_cycle = params.fetch("query_average_cycle")
   
