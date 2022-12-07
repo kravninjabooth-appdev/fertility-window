@@ -28,6 +28,17 @@ class OvulationCalculatorsController < ApplicationController
     @num2 = params.fetch("query_average_cycle")
     @the_ovulation_calculator.approx_ovulation = @num1 + (@num2.to_i - 14)
 
+    #Fertile window date1
+    @the_ovulation_calculator.fertile_window_date1 = @the_ovulation_calculator.approx_ovulation - 4
+   
+    #Fertile window date2
+    @the_ovulation_calculator.fertile_window_date2 = @the_ovulation_calculator.approx_ovulation + 1
+
+    #Next period
+    @next_period = @num1 + @num2.to_i
+
+    #Pregnancy test day
+    @pregnancy_test_day = @next_period + 1
 
     if @the_ovulation_calculator.valid?
       @the_ovulation_calculator.save
