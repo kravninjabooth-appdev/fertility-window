@@ -1,1 +1,10 @@
-<h1>hi</h1>
+<% if session.fetch(:user_id) != nil %>
+  <h2>Determine your fertile window</h2>
+
+
+          <li>
+            <a href="/dashboard">
+              Dashboard
+            </a>
+          </li>
+<% end %>
