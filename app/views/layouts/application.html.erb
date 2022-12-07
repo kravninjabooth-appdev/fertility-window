@@ -22,16 +22,8 @@
 
     <nav>
       <ul>
-          <li>
-            <a href="/user_sign_in">
-              Sign in
-            </a>
-          </li>
-          <li>
-            <a href="/user_sign_up">
-              Sign up
-            </a>
-          </li>
+        <% if session.fetch(:user_id) != nil %>
+          
           <li>
             <a href="/user_sign_out">
               Sign out
@@ -47,6 +39,20 @@
             Home
           </a>
         </li>
+        <% end %>
+        
+      <% if session.fetch(:user_id) == nil %>
+        <li>
+            <a href="/user_sign_in">
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a href="/user_sign_up">
+              Sign up
+            </a>
+          </li>
+      <%end%>
       </ul>
     </nav>
 

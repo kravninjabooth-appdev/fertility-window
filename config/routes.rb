@@ -9,8 +9,10 @@ Rails.application.routes.draw do
           
   # READ
   get("/dashboard", { :controller => "ovulation_calculators", :action => "index" })
+
+  get("/ovulation_calculators", { :controller => "ovulation_calculators", :action => "index" })
   
-  get("/ovulation_calculators/:path_id", { :controller => "ovulation_calculators", :action => "show" })
+  #get("/ovulation_calculators/:path_id", { :controller => "ovulation_calculators", :action => "show" })
   
   # UPDATE
   
@@ -49,5 +51,5 @@ Rails.application.routes.draw do
   #------------------------------
 
   # HOMEPAGE
-  #get("/", { :controller => "application", :action => "homepage" })
+  get("/", { :controller => "application", :action => "homepage" })
 end
