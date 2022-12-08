@@ -84,12 +84,6 @@
           Created at
         </th>
 
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @list_of_ovulation_calculators.each do |an_ovulation_calculator| %>
@@ -133,9 +127,9 @@
         <td>
           <%= time_ago_in_words(an_ovulation_calculator.created_at) %> ago
         </td>
-        <td>
-          <%= time_ago_in_words(an_ovulation_calculator.updated_at) %> ago
-        </td>
+        
+          <%#= time_ago_in_words(an_ovulation_calculator.updated_at) %>
+       
 
         <td>
           <a href="/delete_ovulation_calculator/<%= an_ovulation_calculator.id %>">
